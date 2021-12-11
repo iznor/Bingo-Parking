@@ -4,7 +4,7 @@ const personSchema = new Schema({
     firstName: { Type: String },
     lastName: { Type: String },
     phoneNumber: { Type: String }
-}, { collection: 'persons' });
+}, { collection: 'persons' }) ;
 
 const Person=model('Person', personSchema);
 
