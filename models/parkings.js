@@ -8,16 +8,16 @@ const locationSchema = new Schema({
 });
 
 const parkingSchema = new Schema({
-    parkingID: { Type: Number },
+    parkingID: Number,
     person: personSchema,
     location: locationSchema,
-    dateStart: { Type: Date },
-    dateEnd: { Type: Date },
-    price: { Type: Number },
-    active: { Type: Boolean }
+    dateStart: Date,
+    dateEnd: Date,
+    price: Number,
+    active: Boolean
 }, { collection: 'parkings' });
 
 const Parking = model('Parking', parkingSchema);
 
-module.exports = Parking; 
+module.exports = Parking;
 

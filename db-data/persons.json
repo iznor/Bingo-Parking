@@ -1,0 +1,38 @@
+[
+    {
+        "personId": 1,
+        "firstName": "Dodi",
+        "lastName": "Telega",
+        "phoneNumber": "0547997273"
+    },
+    {
+        "personId": 2,
+        "firstName": "Darci",
+        "lastName": "Hallewell",
+        "phoneNumber": "0547887273"
+    },
+    {
+        "personId": 3,
+        "firstName": "Otto",
+        "lastName": "Lathleiff",
+        "phoneNumber": "0547887273"
+    },
+    {
+        "personId": 4,
+        "firstName": "Brian",
+        "lastName": "Feighry",
+        "phoneNumber": "0527887273"
+    },
+    {
+        "personId": 5,
+        "firstName": "Jojo",
+        "lastName": "Menis",
+        "phoneNumber": "0507887253"
+    },
+    {
+        "personId": 6,
+        "firstName": "Wendye",
+        "lastName": "Selburn",
+        "phoneNumber": "0507887253"
+    }
+]
