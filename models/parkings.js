@@ -2,9 +2,9 @@ const { ObjectId, Double } = require('bson');
 const { Schema, model, Mongoose } = require('mongoose');
 const { personSchema } = require('./persons');
 
-const locationSchema = new Location({
-    lng: { Type: Double },
-    lat: { Type: Double }
+const locationSchema = new Schema({
+    lng: { Type: Number },
+    lat: { Type: Number }
 });
 
 const parkingSchema = new Schema({
@@ -13,7 +13,7 @@ const parkingSchema = new Schema({
     location: locationSchema,
     dateStart: { Type: Date },
     dateEnd: { Type: Date },
-    price: { Type: Double },
+    price: { Type: Number },
     active: { Type: Boolean }
 }, { collection: 'parkings' });
 

@@ -1,4 +1,4 @@
-const { Person } = require('../models/person');
+const { Person } = require('../models/persons');
 
 
 exports.personsController = {

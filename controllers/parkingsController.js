@@ -1,5 +1,5 @@
-const Parking = require('../models/parking');
-const weatherApi = require('../apis/weather');
+const Parking = require('../models/parkings');
+const mapsApi = require('../apis/maps');
 
 exports.parkingsController = {
     getParkings(req, res) {

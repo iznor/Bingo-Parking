@@ -7,8 +7,8 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 const { parkingsRouter } = require("./routers/parkingsRouter");
 const { personsRouter } = require("./routers/personsRouter");
-const { authRouter } = require("./routers/authRouter");
-const authenticator = require("./middlewares/authenticator");
+// const { authRouter } = require("./routers/authRouter");
+// const authenticator = require("./middlewares/authenticator");
 /*TODO: auth middleware =>
     app.use('/api/auth/', authRouter);
     app.use(authenticator.authenticator);
