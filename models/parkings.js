@@ -1,3 +1,4 @@
+const { string } = require('assert-plus');
 const { ObjectId, Double } = require('bson');
 const { Schema, model, Mongoose } = require('mongoose');
 const { personSchema } = require('./persons');
@@ -14,7 +15,7 @@ const parkingSchema = new Schema({
     dateStart: Date,
     dateEnd: Date,
     price: Number,
-    active: Boolean
+    active: String
 }, { collection: 'parkings' });
 
 const Parking = model('Parking', parkingSchema);
