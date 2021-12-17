@@ -8,7 +8,7 @@ const locationSchema = new Schema({
 });
 
 const parkingSchema = new Schema({
-    parkingID: Number,
+    parkingID: { type: Number, index: 1 },
     person: personSchema,
     location: locationSchema,
     dateStart: Date,
