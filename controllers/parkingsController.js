@@ -29,7 +29,9 @@ exports.parkingsController = {
     },
 
     deleteParking(req, res) {
-        
+        Parking.deleteOne({ flightId: req.params.id })
+        .then(res.status(200).send('Deleted!'))
+        .catch(err => { res.status(400).send(`${err}: Couldn't find id`) })
     }
 
 };
