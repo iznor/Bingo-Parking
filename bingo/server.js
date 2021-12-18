@@ -13,6 +13,14 @@ const { personsRouter } = require("./routers/personsRouter");
     app.use('/api/auth/', authRouter);
     app.use(authenticator.authenticator);
 */
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "*");
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.set('Content-Type', 'application/json');
+  next();
+});
 app.use('/api/parkings', parkingsRouter);
 app.use('/api/persons', personsRouter);
 
