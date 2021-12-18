@@ -1,6 +1,6 @@
 [
     {
-        "parkingID": 4,
+        "parkingId": 4,
         "person": {
             "personId": 4,
             "firstName": "Brian",
@@ -17,7 +17,7 @@
         "active": "False"
     },
     {
-        "parkingID": 5,
+        "parkingId": 5,
         "person": {
             "personId": 5,
             "firstName": "Jojo",
@@ -34,7 +34,7 @@
         "active": "False"
     },
     {
-        "parkingID": 6,
+        "parkingId": 6,
         "person": {
             "personId": 6,
             "firstName": "Wendye",

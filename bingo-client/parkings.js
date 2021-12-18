@@ -83,7 +83,7 @@ $(function () {
  $('#parkings-list').append(tableStructure);
  parkings.forEach(parking => {
      $("table tbody").append('<tr>' +
-             '<th scope="row">' + parking.parkingID + '</th>' +
+             '<th scope="row">' + parking.parkingId + '</th>' +
              '<td>' + parking.person.firstName + " " + parking.person.lastName   + " " + parking.person.phoneNumber +'</td>' +
              '<td>' + parking.location.lat  + " " +  parking.location.lat  + '</td>' +
              '<td>' + parking.dateStart + '</td>' +
@@ -134,14 +134,14 @@ $(function () {
          url: `http://localhost:8080/api/parkings/${parkingId}`,
          type: 'DELETE',
          success: (deletedResult) => {
-            if (deletedResult.deletedCount > 0 ) {
+             console.log(`delete: ${parkingId}`);     //test if enter to success     
+            if (deletedResult.deletedCount >0) {
+                // console.log(`delete: ${parkingId}`);
                 getAllParkings();
-                console.log("delete");
                 showDeleteParkingMessage("Deleted successfully");
-                getAllParkings();
             }   
         }
-     });
+    });
  }
  function showDeleteParkingMessage(message) {
     console.log("massage is ")

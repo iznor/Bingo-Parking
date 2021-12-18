@@ -4,12 +4,12 @@ const { Schema, model, Mongoose } = require('mongoose');
 const { personSchema } = require('./persons');
 
 const locationSchema = new Schema({
-    lng: { Type: Number },
-    lat: { Type: Number }
+    lng: Number,
+    lat: Number
 });
 
 const parkingSchema = new Schema({
-    parkingID: { type: Number, index: 1 },
+    parkingId: { type: Number, index: 1 },
     person: personSchema,
     location: locationSchema,
     dateStart: Date,

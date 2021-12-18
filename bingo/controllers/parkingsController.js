@@ -10,7 +10,7 @@ exports.parkingsController = {
     },
     getParkingById(req, res) {
         const id = parseInt(req.params.id)
-        Parking.findOne({ parkingID: id})
+        Parking.findOne({ parkingId: id})
             .then(docs => {
                 if (!docs) {
                     res.status(404).send("Parking not found");
@@ -24,7 +24,7 @@ exports.parkingsController = {
     addParking(req, res) {
         const { body } = req;
         let parkingExists = false;
-        Parking.countDocuments({ parkingID: body.parkingID }, (err, count) => {
+        Parking.countDocuments({ parkingId: body.parkingId }, (err, count) => {
             if (count > 0) {
                 parkingExists = true;
             }
@@ -32,8 +32,8 @@ exports.parkingsController = {
                 res.status(404).send("Error saving a parking");
             } else {
                 const newParking = new Parking;
-                if (body.parkingID && body.person && body.location && body.dateStart && body.dateEnd && body.price && body.active) {
-                    newParking.parkingID = body.parkingID;
+                if (body.parkingId && body.person && body.location && body.dateStart && body.dateEnd && body.price && body.active) {
+                    newParking.parkingId = body.parkingId;
                     newParking.person = body.person;
                     newParking.location = body.location;
                     newParking.dateStart = body.dateStart;
@@ -56,13 +56,13 @@ exports.parkingsController = {
 
     },
     editParking(req, res) {
-        Parking.updateOne({ parkingID : req.params.id }, req.body)
+        Parking.updateOne({ parkingId : req.params.id }, req.body)
             .then((result) => {
                 if (result.matchedCount > 0)
                     res.send("parking has updated")
 
                 else
-                    res.status(400).json("parkingID is not correct")
+                    res.status(400).json("parkingId is not correct")
             })
             .catch(err => res.json(`there is Error in updated parking ${err}`));
     },
