@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="parkings.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>bingo - client side</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Parkings</h1>
+        <section id="content">
+            <section id="parkings-list">
+                <h2>Parkings list</h2>
+            </section>
+            <section id="parking-operations">
+                <h2>parking operations </h2>
+                <section id="parking-buttons">
+                    <button type="button" class="btn btn-info" id="get-button">Get parking111 </button>
+                    <button type="button" class="btn btn-danger" id="delete-button">Delete parking </button>
+                    <button type="button" class="btn btn-success" id="add-button">Add parking </button>
+                    <button type="button" class="btn btn-warning" id="update-button">Update parking </button>
+                </section>
+                <section class="test" id="get-delete-parking">
+                    <input type="text" id="park-id" name="parking-id" />
+                    <button type="button" class="btn btn-primary" id="get-and-delete-action"></button>
+                    <section id="parking-result"></section>
+                </section>
+                <section id="add-update-parking">
+                    <label id="parking-id-section">parkingID: <input type="text" id="park-id-form" name="parking-id"/></label>
+                    
+                    <label>person: <input type="text" id="person-form" name="parking-person"/></label>
+                    <label>location: <input type="text" id="location-form" name="parking-location"/></label>
+                    <label>dateStart: <input type="text" id="dateStart-form" name="parking-dateStart"/></label>
+                    <label>dateEnd: <input type="text" id="name-dateEnd" name="parking-dateEnd"/></label>
+                    <label>price: <input type="text" id="price-form" name="parking-price"/></label>
+                    <label>active: <input type="text" id="active-form" name="parking-active"/></label>
+
+                    <button type="button" class="btn btn-primary" id="add-and-update-action"></button>
+                    <section id="parking-add-update-result"></section>
+                </section>
+            </section>
+        </section>
+    </div>
+</body>
+
+</html>
+
+

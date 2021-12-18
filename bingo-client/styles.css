@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header, main, footer, nav, aside, section, div {
+    display: block;
+}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow',
+    Arial, sans-serif;
+}
+#wrapper h1,
+#wrapper h2 {
+    text-align: center;
+}
+#content {
+    display: flex;
+}
+#parkingId-list,
+#parking-operations {
+    width: 50%;
+}
+#parking-operations > #parking-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+#parking-operations button {
+    width: 100px;
+}
+#get-delete-parking {
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    display: none;
+}
+#add-update-parking {
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    display: none;
+}
