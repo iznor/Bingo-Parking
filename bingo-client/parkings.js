@@ -1,9 +1,12 @@
+
+
 $(function () {
     getAllParkings();
 
      $("#get-button").click((parking) => {
          $("#get-delete-parking").css("display", "block");
          $("#add-update-parking").css("display", "none");
+         $("#parking-result-faild").css("display", "none");
          $("#get-and-delete-action").text("Get parking");
      });
      $("#delete-button").click(() => {
@@ -11,18 +14,16 @@ $(function () {
          $("#get-delete-parking").css("display", "block");
          $("#add-update-parking").css("display", "none");
          $("#get-and-delete-action").text("Delete parking");
+         $("#parking-result-faild").css("display", "none");
      });
      $("#get-and-delete-action").click(() => {
          const parkingId = $("#park-id").val();
-         console.log(parkingId);
-         console.log("get and delete ");
          if (!parkingId) {
              return;
          }
          if ($("#get-and-delete-action").text() === "Get parking") {
              getParkingById(parkingId);
          } else {
-            console.log(" delete ");
              deleteParkingById(parkingId);
          }
      });
@@ -50,19 +51,11 @@ $(function () {
         const dateEnd = $("#dateEnd-dateEnd").val();
         const price = $("#price-form").val();
         const active = $("#active-form").val();
-
-
-
-        console.log(parkingId);
-        console.log("add and update ");
-        if (!parkingId) {
-            return;
-        }
-        if ($("#add-and-update-action").text() === "Add parking") {
-            console.log(" Add parking ");
-           
+        if ($("#add-and-update-action").text() == "Add parking") {
+            addParking(firstName, lastName , phoneNumber ,location_lng,
+                location_lat , dateStart , dateEnd ,price  ,active
+                );
         } else {
-            console.log("update")
             updateParking(parkingId, firstName, lastName , phoneNumber ,location_lng,
                           location_lat , dateStart , dateEnd ,price  ,active
                           );
@@ -72,19 +65,16 @@ $(function () {
  });
  
  function getAllParkings() {
-     console.log("hello");
      $.ajax({
          url: 'http://localhost:8080/api/parkings',
          type: 'GET',
          success: (parkings) => {
-             console.log( "parkings ");
              recreateParkingsTable(parkings);
          }
      });
  }
  
  function recreateParkingsTable(parkings) {
- 
      const tableStructure =
      '<table class="table">' +
          '<thead>' +
@@ -129,13 +119,18 @@ $(function () {
              if (park) {
                  showParking(park);
              } else {
-                 $("#parking-result").empty();
+                //  TO DO
              }
-         }
+         },
+         error: function(XMLHttpRequest, textStatus, errorThrown) { 
+             $("#parking-result").empty();
+             $("#parking-result-faild").css("display", "block");
+
+        }      
      });
  }
  function showParking(parking) {
-     console.log(parking);
+     $("#parking-result-faild").css("display", "none");
      $("#parking-result").empty();
      $("#parking-result").append(
          '<p>' +
@@ -151,22 +146,22 @@ $(function () {
  
  
  function deleteParkingById(parkingId) {
-     console.log(parkingId)
      $.ajax({
          url: `http://localhost:8080/api/parkings/${parkingId}`,
          type: 'DELETE',
          dataType: 'text',
          success:  function(deletedResult) {
-            console.log(`delete: ${parkingId}`);
             showDeleteParkingMessage("Deleted successfully");
             getAllParkings();
-        }
-        
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            $("#parking-result").empty();
+            $("#parking-result-faild").css("display", "block");
+        }      
     });
  }
  function showDeleteParkingMessage(message) {
-    console.log("massage is ")
-    console.log(message);
+    $("#parking-result-faild").css("display", "none");
     $("#parking-result").empty();
     $("#parking-result").append(
         '<p>' + message  + '<p>'
@@ -174,10 +169,7 @@ $(function () {
  }
  function updateParking(parkingId, firstName, lastName , phoneNumber ,location_lng,
     location_lat , dateStart , dateEnd ,price  , active) {
-     console.log("ajax_update");
-  
      $.ajax({
-        
         url: `http://localhost:8080/api/parkings/${parkingId}`,
         type: 'PUT',
         dataType: 'text',
@@ -198,11 +190,41 @@ $(function () {
         }),
         contentType: 'application/json; charset=utf-8',
         success: ()=>{
-            console.log("Sucess");
+            // console.log("Sucess"); TODO change to logger
             getAllParkings();
         },
         error: function(jqXHR, status, errorThrown){
         }
     })
-
+}
+function addParking( firstName, lastName , phoneNumber ,location_lng,
+    location_lat , dateStart , dateEnd ,price  , active) {
+     $.ajax({
+        url: `http://localhost:8080/api/parkings`,
+        type: 'POST',
+        dataType: 'text',
+        data: JSON.stringify({
+            "person": {
+                "firstName": firstName,
+                "lastName": lastName,
+                "phoneNumber": phoneNumber
+            },
+            "location": {
+                "lat": location_lat,
+                "lng": location_lng,
+            },
+            "dateStart": dateStart,
+            "dateEnd": dateEnd,
+            "price": price,
+            "active": active
+        }),
+        contentType: 'application/json; charset=utf-8',
+        success: ()=>{
+            // console.log("Sucess"); TODO change to logger
+            getAllParkings();
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+        //    console.log("error adding"); TODO change to logger
+        }      
+    })
 }
