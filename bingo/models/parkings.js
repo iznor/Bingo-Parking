@@ -1,5 +1,3 @@
-const { string } = require('assert-plus');
-const { ObjectId, Double } = require('bson');
 const { Schema, model, Mongoose } = require('mongoose');
 const { personSchema } = require('./persons');
 
@@ -9,7 +7,7 @@ const locationSchema = new Schema({
 });
 
 const parkingSchema = new Schema({
-    parkingId: { type: Number, index: 1 },
+    parkingId: Number,
     person: personSchema,
     location: locationSchema,
     dateStart: Date,
