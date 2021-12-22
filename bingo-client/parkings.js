@@ -152,8 +152,6 @@ function getParkingById(parkingId) {
 
             if (park) {
                 showParking(park);
-            } else {
-                //  TO DO
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -224,7 +222,6 @@ function updateParking(parkingId, firstName, lastName, phoneNumber, location_lng
         }),
         contentType: 'application/json; charset=utf-8',
         success: () => {
-            // console.log("Sucess"); TODO change to logger
             getAllParkings();
         },
         error: function (jqXHR, status, errorThrown) {
