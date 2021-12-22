@@ -117,7 +117,8 @@
     "vary": "^1.1.2",
     "verror": "^1.10.0",
     "webidl-conversions": "^7.0.0",
-    "whatwg-url": "^11.0.0"
+    "whatwg-url": "^11.0.0",
+    "winston": "^3.3.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

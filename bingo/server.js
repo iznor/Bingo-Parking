@@ -3,7 +3,8 @@ const app = express();
 const router = express.Router();
 const dotenv = require("dotenv").config({ path: '.env' });
 const port = process.env.PORT || 3000;
-
+const logger = require("./logger");
+const myEvents = require("./myEvents.js");
 app.use(express.json());
 const { parkingsRouter } = require("./routers/parkingsRouter");
 const { personsRouter } = require("./routers/personsRouter");
