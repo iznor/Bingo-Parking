@@ -1,0 +1,110 @@
+error: can't get data from DB {"timestamp":"2021-22-12 20:13:12"}
+error: can't get data from DB {"timestamp":"2021-22-12 20:42:39"}
+info: Success! GET {"timestamp":"2021-22-12 20:50:38"}
+error: can't get data from DB {"timestamp":"2021-22-12 20:50:38"}
+error: can't get data from DB {"timestamp":"2021-22-12 20:51:36"}
+info: Success! GET {"timestamp":"2021-22-12 20:56:36"}
+error: can't get data from DB {"timestamp":"2021-22-12 20:56:36"}
+info: Success! GET {"timestamp":"2021-22-12 20:56:40"}
+error: can't get data from DB {"timestamp":"2021-22-12 20:56:40"}
+info: Success! GET {"timestamp":"2021-22-12 20:56:40"}
+error: can't get data from DB {"timestamp":"2021-22-12 20:56:40"}
+info: Success! GET {"timestamp":"2021-22-12 20:56:59"}
+error: can't get data from DB {"timestamp":"2021-22-12 20:56:59"}
+info: Success! GET {"timestamp":"2021-22-12 20:57:09"}
+error: can't get data from DB {"timestamp":"2021-22-12 20:57:09"}
+info: Success! GET {"timestamp":"2021-22-12 20:57:44"}
+error: can't get data from DB {"timestamp":"2021-22-12 20:57:44"}
+info: Success! GET {"timestamp":"2021-22-12 20:59:32"}
+error: can't get data from DB {"timestamp":"2021-22-12 20:59:33"}
+info: Success! GET {"timestamp":"2021-22-12 21:00:14"}
+error: can't get data from DB {"timestamp":"2021-22-12 21:00:14"}
+info: Success! GET {"timestamp":"2021-22-12 21:01:38"}
+error: can't get data from DB {"timestamp":"2021-22-12 21:01:39"}
+info: Success! GET {"timestamp":"2021-22-12 21:02:37"}
+info: Success! GET {"timestamp":"2021-22-12 21:02:57"}
+info: Success! GET {"timestamp":"2021-22-12 21:03:02"}
+info: Success! GET {"timestamp":"2021-22-12 21:04:03"}
+info: Success! GET {"timestamp":"2021-22-12 21:04:06"}
+info: Success! GET {"timestamp":"2021-22-12 21:04:08"}
+info: Success! GET {"timestamp":"2021-22-12 21:04:35"}
+info: Success! GET {"timestamp":"2021-22-12 21:04:40"}
+info: Success! GET {"timestamp":"2021-22-12 21:04:46"}
+info: Success! GET {"timestamp":"2021-22-12 21:04:52"}
+info: Success! GET {"timestamp":"2021-22-12 21:04:54"}
+info: Success! GET {"timestamp":"2021-22-12 21:04:58"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:02"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:05"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:07"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:22"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:25"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:26"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:34"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:38"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:44"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:54"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:58"}
+info: Success! GET {"timestamp":"2021-22-12 21:05:59"}
+info: Success! GET {"timestamp":"2021-22-12 21:06:05"}
+info: Success! GET {"timestamp":"2021-22-12 21:06:10"}
+info: Success! GET {"timestamp":"2021-22-12 21:06:20"}
+error: id not found in parking database {"timestamp":"2021-22-12 21:06:26"}
+info: Success! GET {"timestamp":"2021-22-12 21:06:31"}
+info: Success! GET {"timestamp":"2021-22-12 21:06:41"}
+info: Success! GET {"timestamp":"2021-22-12 21:06:47"}
+info: Success! GET {"timestamp":"2021-22-12 21:06:53"}
+info: Success! GET {"timestamp":"2021-22-12 21:06:57"}
+info: Success! GET {"timestamp":"2021-22-12 21:06:59"}
+info: Success! GET {"timestamp":"2021-22-12 21:07:01"}
+info: Success! GET {"timestamp":"2021-22-12 21:07:04"}
+info: Success! GET {"timestamp":"2021-22-12 21:07:11"}
+info: Success! GET {"timestamp":"2021-22-12 21:07:12"}
+info: Success! GET {"timestamp":"2021-22-12 21:07:12"}
+info: Success! GET {"timestamp":"2021-22-12 21:07:14"}
+error: id not found in parking database {"timestamp":"2021-22-12 21:07:33"}
+info: Success! GET {"timestamp":"2021-22-12 21:07:44"}
+error: id not found in parking database {"timestamp":"2021-22-12 21:15:49"}
+info: Success! POST {"timestamp":"2021-22-12 21:16:30"}
+info: Success! GET {"timestamp":"2021-22-12 22:52:09"}
+info: Success! GET {"timestamp":"2021-22-12 22:53:58"}
+info: Success! GET {"timestamp":"2021-22-12 23:20:49"}
+info: Success! GET {"timestamp":"2021-22-12 23:21:08"}
+info: Success! GET {"timestamp":"2021-22-12 23:21:39"}
+info: Success! GET {"timestamp":"2021-22-12 23:22:02"}
+info: Success! GET {"timestamp":"2021-22-12 23:25:21"}
+info: Success! GET {"timestamp":"2021-22-12 23:25:21"}
+info: Success! GET {"timestamp":"2021-22-12 23:25:33"}
+info: Success! GET {"timestamp":"2021-22-12 23:25:33"}
+info: Success! GET {"timestamp":"2021-22-12 23:33:50"}
+info: Success! POST {"timestamp":"2021-22-12 23:40:04"}
+info: Success! PUT {"timestamp":"2021-22-12 23:40:33"}
+info: Success! DELETE {"timestamp":"2021-22-12 23:40:57"}
+info: Success! DELETE {"timestamp":"2021-22-12 23:41:51"}
+info: Success! DELETE {"timestamp":"2021-22-12 23:42:40"}
+info: Success! POST {"timestamp":"2021-22-12 23:42:53"}
+info: Success! DELETE {"timestamp":"2021-22-12 23:47:02"}
+info: Success! POST {"timestamp":"2021-22-12 23:47:41"}
+info: Success! POST {"timestamp":"2021-22-12 23:49:30"}
+info: Success! POST {"timestamp":"2021-22-12 23:49:59"}
+info: Success! POST {"timestamp":"2021-22-12 23:53:31"}
+info: Success! POST {"timestamp":"2021-22-12 23:53:36"}
+info: Success! POST {"timestamp":"2021-22-12 23:53:53"}
+error: id not found in parking database {"timestamp":"2021-22-12 23:54:01"}
+error: id not found in parking database {"timestamp":"2021-22-12 23:54:03"}
+error: id not found in parking database {"timestamp":"2021-22-12 23:54:05"}
+error: id not found in parking database {"timestamp":"2021-22-12 23:54:06"}
+error: id not found in parking database {"timestamp":"2021-22-12 23:54:08"}
+error: id not found in parking database {"timestamp":"2021-22-12 23:54:10"}
+error: id not found in parking database {"timestamp":"2021-22-12 23:54:11"}
+info: Success! POST {"timestamp":"2021-22-12 23:54:43"}
+info: Success! POST {"timestamp":"2021-22-12 23:55:35"}
+error: Error saving a parking {"timestamp":"2021-23-12 00:05:26"}
+error: Error didn't choose a location {"timestamp":"2021-23-12 00:07:47"}
+error: Didn't choose a location {"timestamp":"2021-23-12 00:08:54"}
+info: Success! POST {"timestamp":"2021-23-12 00:09:27"}
+info: Success! POST {"timestamp":"2021-23-12 00:09:52"}
+info: Success! GET {"timestamp":"2021-23-12 00:12:16"}
+info: Success! GET {"timestamp":"2021-23-12 00:13:16"}
+error: Didn't choose a location {"timestamp":"2021-23-12 00:15:27"}
+info: Success! POST {"timestamp":"2021-23-12 00:15:55"}
+info: Success! DELETE {"timestamp":"2021-23-12 00:16:11"}

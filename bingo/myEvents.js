@@ -1,59 +1,42 @@
 const logger = require("./logger");
-const Emitter = require('events');
-const emitter = new Emitter.EventEmitter();
 
-const InvalidPath = () => {
-    logger.log('error', "invalid path");
-}
+module.exports = {
+    dataBaseErr() {
+        logger.log('error', "can't get data from DB");
+    },
+    alreadyExists() {
+        logger.log('error', "can't add item already exist");
+    },
 
-const alreadyExists = () => {
-    logger.log('error', "can't add item already exist");
-}
+    parkingNotFound() {
+        logger.log('error', "id not found in parking database");
+    },
 
-const memberNotFound = () => {
-    logger.log('error', "id not found in members.json");
-}
+    saveError() {
+        logger.log('error', "Error saving a parking");
+    },
+    didntChoose() {
+        logger.log('error', "Didn't choose a location");
+    },
 
-const memberDidNotChoose = () => {
-    logger.log('error', "member is not in the choices list");
-}
+    successPost() {
+        logger.log('info', "Success! POST");
+    },
 
-const dateNotFound = () => {
-    logger.log('error', "id not found in dates.json");
-}
+    successGET() {
+        logger.log('info', "Success! GET");
+    },
+    successPut() {
+        logger.log('info', "Success! PUT");
+    },
+    successDelete() {
+        logger.log('info', "Success! DELETE");
+    },
 
-const emptyList = () => {
-    logger.log('error', "list is empty");
-}
-
-const emptyResponse = () => {
-    logger.log('info', "(Empty response)");
-}
-
-module.exports = emitter.on('errLogEvent', (param) => {
-    switch (param) {
-        case 'InvalidPath':
-            InvalidPath();
-            return;
-        case 'alreadyExists':
-            alreadyExists();
-            return;
-        case 'memberNotFound':
-            memberNotFound();
-            return;
-        case 'memberDidNotChoose':
-            memberDidNotChoose();
-            return;
-        case 'dateNotFound':
-            dateNotFound();
-            return;
-        case 'emptyList':
-            emptyList();
-            return;
-        case 'emptyResponse':
-            emptyResponse();
-            return;
-        default:
-            return;
+    errorPut() {
+        logger.log('error', "there is an error updating a parking");
+    },
+    errorDelete() {
+        logger.log('error', "there is an error Deleting a parking");
     }
-});
+}

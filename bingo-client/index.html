@@ -3,10 +3,12 @@
 
 <head>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-    <script src="parkings.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles.css" />
+    <!-- Maps includes: -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./map-style.css" />
     <title>bingo - client side</title>
 </head>
 
@@ -32,25 +34,34 @@
                     <p id="parking-result-faild">Id is not correct</p>
                 </section>
                 <section id="add-update-parking">
-                    <label id="parking-id-section">parkingID: <input type="text" id="park-id-form" name="parking-id"/></label>
-                    <label>firstName:<input type="text" id="first_name-form" name="parking-person"/></label>
-                    <label>lastName: <input type="text" id="last_name-form" name="parking-person"/></label>
-                    <label>phoneNumber: <input type="text" id="phoneNumber-form" name="parking-person"/></label>
-                    <label>location_lng: <input type="text" id="location_lng-form" name="parking-location"/></label>
-                    <label>location_lat: <input type="text" id="location_lat-form" name="parking-location"/></label>
-                    <label>dateStart: <input type="text" id="dateStart-form" name="parking-dateStart"/></label>
-                    <label>dateEnd: <input type="text" id="dateEnd-dateEnd" name="parking-dateEnd"/></label>
-                    <label>price: <input type="text" id="price-form" name="parking-price"/></label>
-                    <label>active: <input type="text" id="active-form" name="parking-active"/></label>
-
+                    <label id="parking-id-section">parkingID: <input type="text" id="park-id-form"
+                            name="parking-id" /></label>
+                    <label>firstName:<input type="text" id="first_name-form" name="parking-person" /></label>
+                    <label>lastName: <input type="text" id="last_name-form" name="parking-person" /></label>
+                    <label>phoneNumber: <input type="text" id="phoneNumber-form" name="parking-person" /></label>
+                    <label>location_lat: <input type="text" readonly="true" value="Click on map" id="location_lat-form" name="parking-location" required /></label>
+                    <label>location_lng: <input type="text" readonly="true" value="Click on map" id="location_lng-form" name="parking-location" required/></label>
+                    <label>dateStart: <input type="date" id="dateStart-form" name="parking-dateStart" /></label>
+                    <label>dateEnd: <input type="date" max="2022-12-31" id="dateEnd-form" name="parking-dateEnd" /></label>
+                    <label>price: <input type="text" id="price-form" name="parking-price" /></label>
+                    <label>active: <input type="text" id="active-form" name="parking-active" /></label>
+                    
                     <button type="button" class="btn btn-primary" id="add-and-update-action"></button>
                     <section id="parking-add-update-result"></section>
                 </section>
+                <!-- Map -->
+                <input id="pac-input" class="controls" type="text" placeholder="Search Box" />
+                <div id="map"></div>
             </section>
         </section>
     </div>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTjS4YG9aHly_6n7oj3tcHWVG4SnkYTJA&callback=initAutocomplete&libraries=places&v=weekly"
+        async>
+        //the api key will be hidden in the final project.
+    </script>
+        <script id="googleMaps" src="./map-script.js"></script>
+        <script src="parkings.js"></script>
 </body>
 
 </html>
-
-
