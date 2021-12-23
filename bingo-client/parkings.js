@@ -11,6 +11,9 @@ function checkIfActiveNow(dateStart, dateEnd, dateNow){
     return true;
 }
 
+const localPath='http://localhost:8080'
+const herokuPath='http://localhost:8080'
+
 $(function () {
     $("#map").css("visibility", "hidden");
     //Set Date Variable For Today
@@ -124,7 +127,7 @@ $(function () {
 function getAllParkings() {
     $("#map").css("visibility", "visible");
     $.ajax({
-        url: 'http://localhost:8080/api/parkings',
+        url: `${herokuPath}/api/parkings`,
         type: 'GET',
         success: (parkings) => {
             recreateParkingsTable(parkings);
@@ -168,7 +171,7 @@ function recreateParkingsTable(parkings) {
 function getParkingById(parkingId) {
     $.ajax({
         url:
-            `http://localhost:8080/api/parkings/${parkingId}`,
+            `${herokuPath}/api/parkings/${parkingId}`,
         type: 'GET',
         success: (park) => {
 
@@ -199,7 +202,7 @@ function showParking(parking) {
 
 function deleteParkingById(parkingId) {
     $.ajax({
-        url: `http://localhost:8080/api/parkings/${parkingId}`,
+        url: `${herokuPath}/api/parkings/${parkingId}`,
         type: 'DELETE',
         dataType: 'text',
         success: function (deletedResult) {
@@ -224,7 +227,7 @@ function showDeleteParkingMessage(message) {
 function updateParking(parkingId, firstName, lastName, phoneNumber, location_lng,
     location_lat, dateStart, dateEnd, price, active) {
     $.ajax({
-        url: `http://localhost:8080/api/parkings/${parkingId}`,
+        url: `${herokuPath}/api/parkings/${parkingId}`,
         type: 'PUT',
         dataType: 'text',
         data: JSON.stringify({
@@ -255,7 +258,7 @@ function addParking(firstName, lastName, phoneNumber, location_lng,
     location_lat, dateStart, dateEnd, price) {
 
     $.ajax({
-        url: `http://localhost:8080/api/parkings`,
+        url: `${herokuPath}/api/parkings`,
         type: 'POST',
         dataType: 'text',
         data: JSON.stringify({
