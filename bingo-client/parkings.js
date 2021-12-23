@@ -1,3 +1,16 @@
+function checkIfActiveNow(dateStart, dateEnd, dateNow){
+        
+    var fDate,lDate,cDate;
+    fDate = Date.parse(dateStart);
+    lDate = Date.parse(dateEnd);
+    cDate = Date.parse(dateNow);
+
+    if((cDate <= lDate && cDate >= fDate)) {
+        return false;
+    }
+    return true;
+}
+
 $(function () {
     $("#map").css("visibility", "hidden");
     //Set Date Variable For Today
@@ -14,6 +27,11 @@ $(function () {
     today = yyyy + '-' + mm + '-' + dd;
     document.getElementById("dateStart-form").setAttribute("min", today);
     document.getElementById("dateEnd-form").setAttribute("min", today);
+    
+
+
+    // alert(checkIfActiveNow(new Date(2021,1,1), new Date(2022,1,1), new Date()))
+
     //END Set Date
 
     //MAP
@@ -55,6 +73,8 @@ $(function () {
     });
     $("#add-button").click((parking) => {
         $("#map").css("visibility", "visible");
+        $("#location_lat-form").attr("value", "Click on map")
+        $("#location_lng-form").attr("value", "Click on map")
         $("#map").click(()=>{
             $('#location_lat-form').attr("value", clickedLoc.lat())
             $('#location_lng-form').attr("value", clickedLoc.lng())
@@ -67,6 +87,8 @@ $(function () {
 
     $("#update-button").click((parking) => {
         $("#map").css("visibility", "visible");
+        $("#location_lat-form").attr("value", "Click on map")
+        $("#location_lng-form").attr("value", "Click on map")
         $("#map").click(()=>{
             $('#location_lat-form').attr("value", clickedLoc.lat())
             $('#location_lng-form').attr("value", clickedLoc.lng())
@@ -89,7 +111,7 @@ $(function () {
         const active = $("#active-form").val();
         if ($("#add-and-update-action").text() == "Add parking") {
             addParking(firstName, lastName, phoneNumber, location_lng,
-                location_lat, dateStart, dateEnd, price, active
+                location_lat, dateStart, dateEnd, price,
             );
         } else {
             updateParking(parkingId, firstName, lastName, phoneNumber, location_lng,
@@ -134,8 +156,8 @@ function recreateParkingsTable(parkings) {
             '<th scope="row">' + parking.parkingId + '</th>' +
             '<td>' + parking.person.firstName + " " + parking.person.lastName + " " + parking.person.phoneNumber + '</td>' +
             '<td>' + parking.location.lat + " " + parking.location.lng + '</td>' +
-            '<td>' + parking.dateStart + '</td>' +
-            '<td>' + parking.dateEnd + '</td>' +
+            '<td>' + `${new Date(parking.dateStart).getDate()}/${new Date(parking.dateStart).getMonth()}/${new Date(parking.dateStart).getFullYear()}` + '</td>' +
+            '<td>' + `${new Date(parking.dateEnd).getDate()}/${new Date(parking.dateEnd).getMonth()}/${new Date(parking.dateEnd).getFullYear()}` + '</td>' +
             '<td>' + parking.price + '</td>' +
             '<td>' + parking.active + '</td>' +
             '</tr>'
@@ -167,8 +189,8 @@ function showParking(parking) {
         '<p>' +
         'person: ' + parking.person.firstName + " " + parking.person.lastName + " " + parking.person.phoneNumber + '<br>' +
         'location: ' + parking.location.lat + " " + parking.location.lng + '<br>' +
-        'dateStart: ' + parking.dateStart + '<br>' +
-        'dateEnd: ' + parking.dateEnd + '<br>' +
+        'dateStart: ' + `${new Date(parking.dateStart).getDate()}/${new Date(parking.dateStart).getMonth()}/${new Date(parking.dateStart).getFullYear()}` + '<br>' +
+        'dateEnd: ' + `${new Date(parking.dateEnd).getDate()}/${new Date(parking.dateEnd).getMonth()}/${new Date(parking.dateEnd).getFullYear()}` + '<br>' +
         'price: ' + parking.price + '<br>' +
         'active: ' + parking.active + '<br>' +
         '<p>'
@@ -230,7 +252,7 @@ function updateParking(parkingId, firstName, lastName, phoneNumber, location_lng
 }
 
 function addParking(firstName, lastName, phoneNumber, location_lng,
-    location_lat, dateStart, dateEnd, price, active) {
+    location_lat, dateStart, dateEnd, price) {
 
     $.ajax({
         url: `http://localhost:8080/api/parkings`,
@@ -249,7 +271,7 @@ function addParking(firstName, lastName, phoneNumber, location_lng,
             "dateStart": dateStart,
             "dateEnd": dateEnd,
             "price": price,
-            "active": active
+            "active": true
         }),
         contentType: 'application/json; charset=utf-8',
         success: () => {
