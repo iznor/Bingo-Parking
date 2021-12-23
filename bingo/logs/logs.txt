@@ -108,3 +108,11 @@ info: Success! GET {"timestamp":"2021-23-12 00:13:16"}
 error: Didn't choose a location {"timestamp":"2021-23-12 00:15:27"}
 info: Success! POST {"timestamp":"2021-23-12 00:15:55"}
 info: Success! DELETE {"timestamp":"2021-23-12 00:16:11"}
+info: Success! GET {"timestamp":"2021-23-12 22:10:44"}
+info: Success! POST {"timestamp":"2021-23-12 23:05:31"}
+info: Success! GET {"timestamp":"2021-23-12 23:33:12"}
+info: Success! GET {"timestamp":"2021-23-12 23:37:37"}
+info: Success! GET {"timestamp":"2021-23-12 23:38:54"}
+error: id not found in parking database {"timestamp":"2021-23-12 23:43:56"}
+error: id not found in parking database {"timestamp":"2021-23-12 23:45:28"}
+error: id not found in parking database {"timestamp":"2021-23-12 23:45:30"}
