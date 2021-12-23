@@ -9,6 +9,23 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow',
     Arial, sans-serif;
 }
+#wrapper{
+    margin: 0 auto;
+}
+#logo{
+    display: flex;
+    margin: 0 auto;
+    justify-self: center;
+    justify-content: center;
+    justify-items: center;
+    width: 434px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('./assets/img/70-702442_bingo-png-transparent-png.png');
+}
 #wrapper h1,
 #wrapper h2 {
     text-align: center;
