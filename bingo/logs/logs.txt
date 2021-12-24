@@ -118,3 +118,4 @@ error: id not found in parking database {"timestamp":"2021-23-12 23:45:28"}
 error: id not found in parking database {"timestamp":"2021-23-12 23:45:30"}
 info: Success! GET {"timestamp":"2021-23-12 23:53:05"}
 info: Success! POST {"timestamp":"2021-23-12 23:54:02"}
+info: Success! GET {"timestamp":"2021-24-12 00:37:59"}

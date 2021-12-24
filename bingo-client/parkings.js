@@ -12,7 +12,7 @@ function checkIfActiveNow(dateStart, dateEnd, dateNow){
 }
 
 const localPath='http://localhost:8080'
-const herokuPath='http://localhost:8080'
+const herokuPath='https://bingo-parking.herokuapp.com'
 
 $(function () {
     $("#map").css("visibility", "hidden");

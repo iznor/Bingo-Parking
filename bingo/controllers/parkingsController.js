@@ -1,5 +1,4 @@
 const Parking = require('../models/parkings');
-const { connect } = require('mongoose');
 const message = require('../myEvents.js');
 
 exports.parkingsController = {
