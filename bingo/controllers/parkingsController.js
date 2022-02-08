@@ -35,7 +35,8 @@ exports.parkingsController = {
                     res.status(404).send("Error saving a parking");
                 } else {
                     const newParking = new Parking;
-                    if (body.person && body.location && body.dateStart && body.dateEnd && body.price && body.active) {
+                    if (body.person && body.location && body.dateStart && body.dateEnd && body.price && body.active && body.email ) {
+                       
                         newParking.parkingId = id_;
                         newParking.person = body.person;
                         newParking.location = body.location;
@@ -43,6 +44,7 @@ exports.parkingsController = {
                         newParking.dateEnd = body.dateEnd;
                         newParking.price = body.price;
                         newParking.active = body.active;
+                        newParking.email = body.email;
                     }
                     if (isNaN(newParking.location.lat) || isNaN(newParking.location.lng)) {
                         message.didntChoose();

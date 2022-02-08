@@ -119,3 +119,10 @@ error: id not found in parking database {"timestamp":"2021-23-12 23:45:30"}
 info: Success! GET {"timestamp":"2021-23-12 23:53:05"}
 info: Success! POST {"timestamp":"2021-23-12 23:54:02"}
 info: Success! GET {"timestamp":"2021-24-12 00:37:59"}
+info: Success! POST {"timestamp":"2022-08-02 20:50:20"}
+info: Success! GET {"timestamp":"2022-08-02 20:59:15"}
+info: Success! POST {"timestamp":"2022-08-02 23:31:30"}
+info: Success! POST {"timestamp":"2022-08-02 23:32:39"}
+info: Success! POST {"timestamp":"2022-08-02 23:38:57"}
+info: Success! POST {"timestamp":"2022-08-02 23:42:06"}
+info: Success! POST {"timestamp":"2022-08-02 23:44:33"}

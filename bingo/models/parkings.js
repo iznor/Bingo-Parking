@@ -8,6 +8,7 @@ const locationSchema = new Schema({
 
 const parkingSchema = new Schema({
     parkingId: Number,
+    email : String,
     person: personSchema,
     location: locationSchema,
     dateStart: Date,
