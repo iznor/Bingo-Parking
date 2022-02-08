@@ -60,6 +60,7 @@ exports.parkingsController = {
                     res.status(404).send("Error saving a parking");
                 }
 }
+
             });
 return;
         });
