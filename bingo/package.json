@@ -1,7 +1,7 @@
 {
   "name": "bingo",
   "version": "1.0.0",
-  "description": "/***********************************Bingo Parking************************************/\r Authors:\r Ido Dor\r Ayham Hussein",
+  "description": "/************Bingo Parking*************/\r Authors:\r Ido Dor\r Ayham Hussein",
   "main": "index.js",
   "dependencies": {
     "accepts": "^1.3.7",
@@ -26,6 +26,7 @@
     "cookie": "^0.4.0",
     "cookie-signature": "^1.0.6",
     "core-util-is": "^1.0.2",
+    "cors": "^2.8.5",
     "dashdash": "^1.14.1",
     "debug": "^2.6.9",
     "delayed-stream": "^1.0.0",

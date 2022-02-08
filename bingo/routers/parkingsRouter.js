@@ -3,7 +3,6 @@ const { parkingsController } = require('../controllers/parkingsController');
 
 const parkingsRouter = new Router();
 
-
 parkingsRouter.get('/', parkingsController.getParkings);
 parkingsRouter.get('/:id', parkingsController.getParkingById);
 parkingsRouter.post('/', parkingsController.addParking);
