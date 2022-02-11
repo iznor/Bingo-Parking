@@ -22,7 +22,9 @@ exports.parkingsController = {
             .catch(err => message.dataBaseErr());
     },
     addParking(req, res) {
+        console.log("test1");
         Parking.findOne().sort('-parkingId').exec((err, Parking_) => {
+            console.log("test2");
             const id_ = Parking_.parkingId + 1;
             const { body } = req;
             let parkingExists = false;
@@ -36,7 +38,7 @@ exports.parkingsController = {
                 } else {
                     const newParking = new Parking;
                     if (body.person && body.location && body.dateStart && body.dateEnd && body.price && body.active && body.email ) {
-                       
+                        console.log("test3");
                         newParking.parkingId = id_;
                         newParking.person = body.person;
                         newParking.location = body.location;
@@ -47,6 +49,7 @@ exports.parkingsController = {
                         newParking.email = body.email;
                     }
                     if (isNaN(newParking.location.lat) || isNaN(newParking.location.lng)) {
+                        console.log("test4");
                         message.didntChoose();
                         res.status(404).send("Error saving a parking");
                     }
