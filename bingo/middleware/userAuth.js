@@ -15,7 +15,7 @@ module.exports = {
                 reject(err)
             }
         })
-    },
+    }, 
     verifyToken: async (req, res, next) => {
         //Missing Token
         if (!req.headers.authorization) {
