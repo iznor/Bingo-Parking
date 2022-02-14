@@ -20,5 +20,18 @@ exports.usersController = {
        else{
            return res.status(401).json({error: 'Authentication Failed'});
        }
-    }
+    },
+    editUser(req, res) {
+        Users.updateOne({ email: req.params.email }, req.body)
+            .then((result) => {
+                if (result.matchedCount > 0) {
+                    message.successPut();
+                    res.send("user has updated");
+                }
+                else {
+                    res.status(400).json("user email is not correct");
+                }
+            })
+            .catch(err => res.json(`there is an error updating a user ${err}`));
+    },
 };
