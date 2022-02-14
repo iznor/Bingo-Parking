@@ -1,6 +1,7 @@
 const express = require("express");
 const userAuth = require("./middleware/userAuth");
 const app = express();
+const cors = require("cors");
 const router = express.Router();
 const port = process.env.PORT || 3000;
 app.use(express.json());
@@ -8,15 +9,16 @@ const { parkingsRouter }  = require("./routers/parkingsRouter");
 const { personsRouter }   = require("./routers/personsRouter");
 const { userRouter }      = require("./routers/usersRouter");
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "*");
-  res.header('Access-Control-Allow-Headers', "*");
-  // res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.set('Content-Type', 'application/json; charset=utf-8');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Methods", "*");
+//   res.header('Access-Control-Allow-Headers', "*");
+//   // res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   res.set('Content-Type', 'application/json; charset=utf-8');
+//   next();
+// });
 
+app.use(cors());
 
 app.use('/api/parkings', parkingsRouter);
 app.use('/api/persons', personsRouter);
