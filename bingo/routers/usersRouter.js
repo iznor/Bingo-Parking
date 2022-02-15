@@ -5,5 +5,5 @@ const userRouter = new Router();
 
 userRouter.post('/login', usersController.login);
 userRouter.put('/:email', usersController.editUser);
-// userRouter.get('/:email/orders', usersController.login);
+userRouter.get('/:email/orders', usersController.getUserOrdersByEmail);
 module.exports = { userRouter };

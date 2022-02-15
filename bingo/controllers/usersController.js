@@ -1,6 +1,7 @@
 const { Users } = require('../models/users');
 const logger = require('../logger');
 const userAuth = require('../middleware/userAuth')
+const Parking = require('../models/parkings');
 
 
 exports.usersController = {
@@ -25,7 +26,6 @@ exports.usersController = {
         Users.updateOne({ email: req.params.email }, req.body)
             .then((result) => {
                 if (result.matchedCount > 0) {
-                    message.successPut();
                     res.send("user has updated");
                 }
                 else {
@@ -34,4 +34,28 @@ exports.usersController = {
             })
             .catch(err => res.json(`there is an error updating a user ${err}`));
     },
+    getUserOrdersByEmail(req, res) {
+        const email = (req.params.email);
+        Users.findOne({ email: email })
+            .then(docs => {
+                if (!docs) {
+                    res.status(404).send("Parking not found");
+                } else {
+                    const parkingId = docs.orders;
+                    // const parkingId = docs.orders.map(item => item);
+                    console.log(parkingId);
+                    Parking.findOne({ parkingId: parkingId })
+                    .then(docs => {
+                        if (!docs) {
+                            res.status(404).send("Parking not found");
+                        } else {
+                            res.json(docs);
+                        }
+                    })
+                    .catch(err => res.json(`there is an error finding a parking ${err}`));
+                    // res.json(docs.orders);
+                }
+            })
+            .catch(err => res.json(`there is an error getting a user ${err}`));
+    }
 };
