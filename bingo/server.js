@@ -9,17 +9,7 @@ const { parkingsRouter }  = require("./routers/parkingsRouter");
 const { personsRouter }   = require("./routers/personsRouter");
 const { userRouter }      = require("./routers/usersRouter");
 
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Methods", "*");
-//   res.header('Access-Control-Allow-Headers', "*");
-//   // res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//   res.set('Content-Type', 'application/json; charset=utf-8');
-//   next();
-// });
-
 app.use(cors());
-
 app.use('/api/parkings', parkingsRouter);
 app.use('/api/persons', personsRouter);
 app.use('/api/user',  userRouter);
@@ -29,7 +19,6 @@ router.use((req,res,next) =>{
   console.log("/", req.method);
   next();
 });
-
 
 router.get("/", (req,res) => {
   res.json({"message" : "Please use /api"});
