@@ -23,7 +23,7 @@ exports.usersController = {
        }
     },
     editUser(req, res) {
-        Users.updateOne({ email: req.params.email }, req.body)
+        Users.updateOne({ email: req.params.email }, { $addToSet: { orders: Number(req.body.orders)} })
             .then((result) => {
                 if (result.matchedCount > 0) {
                     res.send("user has updated");
@@ -42,8 +42,7 @@ exports.usersController = {
                     res.status(404).send("Parking not found");
                 } else {
                     const parkingId = docs.orders;
-                    console.log(parkingId);
-                    Parking.findOne({ parkingId: parkingId })
+                    Parking.find({ parkingId: parkingId })
                     .then(docs => {
                         if (!docs) {
                             res.status(404).send("Parking not found");
