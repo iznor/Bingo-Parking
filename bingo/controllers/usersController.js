@@ -42,7 +42,6 @@ exports.usersController = {
                     res.status(404).send("Parking not found");
                 } else {
                     const parkingId = docs.orders;
-                    // const parkingId = docs.orders.map(item => item);
                     console.log(parkingId);
                     Parking.findOne({ parkingId: parkingId })
                     .then(docs => {
@@ -53,7 +52,6 @@ exports.usersController = {
                         }
                     })
                     .catch(err => res.json(`there is an error finding a parking ${err}`));
-                    // res.json(docs.orders);
                 }
             })
             .catch(err => res.json(`there is an error getting a user ${err}`));
