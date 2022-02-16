@@ -4,12 +4,12 @@ const app = express();
 const cors = require("cors");
 const router = express.Router();
 const port = process.env.PORT || 3000;
+app.use(cors());
 app.use(express.json());
 const { parkingsRouter }  = require("./routers/parkingsRouter");
 const { personsRouter }   = require("./routers/personsRouter");
 const { userRouter }      = require("./routers/usersRouter");
 
-app.use(cors());
 app.use('/api/parkings', parkingsRouter);
 app.use('/api/persons', personsRouter);
 app.use('/api/user',  userRouter);
